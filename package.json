@@ -33,6 +33,7 @@
             }
         ]
     },
-    "main": "index.js",
-    "activationEvents": "main"
+    "repository": {
+        "url": "git@gitlab.com:ido.very.much/beyond-easy-extension.git"
+    }
 }
