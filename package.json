@@ -1,0 +1,38 @@
+{
+    "name": "beyond-easy-extension",
+    "publisher": "ido-s",
+    "displayName": "Beyond-easy",
+    "description": "Beyond-easy Syntax highlight",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.56.0",
+        "node": "14"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "beyond-easy",
+                "aliases": [
+                    "Beyond-easy"
+                ],
+                "extensions": [
+                    ".page",
+                    ".inte",
+                    ".mode"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [{
+                "language": "beyond-easy",
+                "scopeName": "source.beyond-easy",
+                "path": "./syntaxes/beyond-easy.tmLanguage.json"
+            }
+        ]
+    },
+    "main": "index.js",
+    "activationEvents": "main"
+}

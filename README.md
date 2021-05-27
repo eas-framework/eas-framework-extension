@@ -1,0 +1,1 @@
+Beyond-easy extension, to highlight syntax.
