@@ -15,45 +15,13 @@
 			"include": "#embedded-javascript"
 		},
 		{
+			"include": "#embedded-css"
+		},
+		{
 			"include": "#control-statement"
 		},
 		{
 			"include": "#embedded-beyond-easy"
-		},
-		{
-			"name": "meta.tag.any.html",
-			"begin": "(<)([a-z][a-zA-Z0-9:-]*)(?=[^>]*></\\2>)",
-			"beginCaptures": {
-				"1": {
-					"name": "punctuation.definition.tag.begin.html"
-				},
-				"2": {
-					"name": "entity.name.tag.html"
-				}
-			},
-			"end": "(>)(<)(/)(\\2)(>)",
-			"endCaptures": {
-				"1": {
-					"name": "punctuation.definition.tag.end.html"
-				},
-				"2": {
-					"name": "punctuation.definition.tag.begin.html meta.scope.between-tag-pair.html"
-				},
-				"3": {
-					"name": "punctuation.definition.tag.begin.html"
-				},
-				"4": {
-					"name": "entity.name.tag.html"
-				},
-				"5": {
-					"name": "punctuation.definition.tag.end.html"
-				}
-			},
-			"patterns": [
-				{
-					"include": "#tag-stuff"
-				}
-			]
 		},
 		{
 			"begin": "(<)[?]{0,1}([a-z][a-zA-Z0-9:-]*)(?=[^>]*/>)",
@@ -510,7 +478,27 @@
 			]
 		},
 		{
-			"include": "text.html.basic"
+			"name": "meta.tag.block.any.html",
+			"begin": "(</?)([a-zA-Z0-9][a-zA-Z0-9:-_]*\\b)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.begin.html"
+				},
+				"2": {
+					"name": "entity.name.tag.block.any.html"
+				}
+			},
+			"end": "(>)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.end.html"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#tag-stuff"
+				}
+			]
 		}
 	],
 	"repository": {
@@ -569,6 +557,23 @@
 				}
 			],
 			"end": "(?=(?:\\}|\\)))"
+		},
+		"embedded-css": {
+			"begin": "(@style)[ ]*(\\{)",
+			"beginCaptures": {
+				"1": {
+					"name": "entity.name.tag.style.html"
+				},
+				"2": {
+					"name": "source.css.embedded.beyond-easy"
+				}
+			},
+			"patterns": [
+				{
+					"include": "source.css"
+				}
+			],
+			"end": "(?=(?:\\}))"
 		},
 		"keyword": {
 			"name": "keyword.control.beyond-easy",
