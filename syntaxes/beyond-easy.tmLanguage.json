@@ -12,10 +12,10 @@
 			"include": "#comment-block"
 		},
 		{
-			"include": "#embedded-javascript"
+			"include": "#embedded-css"
 		},
 		{
-			"include": "#embedded-css"
+			"include": "#embedded-javascript"
 		},
 		{
 			"include": "#control-statement"
@@ -600,7 +600,12 @@
 		},
 		"keyword": {
 			"name": "keyword.control.beyond-easy",
-			"match": "(?<=@)([a-zA-Z0-9]+)(?:\\s?)"
+			"match": "(?<=@):?([a-zA-Z0-9]+)(?:\\s?);?",
+			"captures": {
+				"4": {
+					"name": "source.js"
+				}
+			}
 		},
 		"control-statement": {
 			"name": "keyword.control.beyond-easy",
@@ -775,9 +780,6 @@
 		"tag-stuff": {
 			"patterns": [
 				{
-					"include": "#beyond-easy-directives"
-				},
-				{
 					"include": "#tag-id-attribute"
 				},
 				{
@@ -788,93 +790,6 @@
 				},
 				{
 					"include": "#string-single-quoted"
-				}
-			]
-		},
-		"beyond-easy-directives": {
-			"name": "meta.directive.beyond-easy",
-			"begin": "([a-zA-Z0-9\\-_]+)(?:\\:([a-zA-Z\\-_]+))?(?:\\.([a-zA-Z\\-_]+))*\\s*(=)",
-			"end": "(?<='|\")|(?=[\\s<>`])",
-			"captures": {
-				"1": {
-					"name": "entity.other.attribute-name.html"
-				},
-				"2": {
-					"name": "punctuation.separator.key-value.html"
-				},
-				"3": {
-					"name": "entity.other.attribute-name.html"
-				},
-				"4": {
-					"name": "entity.other.attribute-name.html"
-				},
-				"5": {
-					"name": "entity.other.attribute-name.html"
-				},
-				"6": {
-					"name": "punctuation.separator.key-value.html"
-				}
-			},
-			"patterns": [
-				{
-					"name": "source.directive.beyond-easy",
-					"begin": "`",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.definition.string.begin.html"
-						}
-					},
-					"end": "`",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.definition.string.end.html"
-						}
-					},
-					"patterns": [
-						{
-							"include": "source.js#expression"
-						}
-					]
-				},
-				{
-					"name": "source.directive.beyond-easy",
-					"begin": "\"",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.definition.string.begin.html"
-						}
-					},
-					"end": "\"",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.definition.string.end.html"
-						}
-					},
-					"patterns": [
-						{
-							"include": "source.js#expression"
-						}
-					]
-				},
-				{
-					"name": "source.directive.beyond-easy",
-					"begin": "'",
-					"beginCaptures": {
-						"0": {
-							"name": "punctuation.definition.string.begin.html"
-						}
-					},
-					"end": "'",
-					"endCaptures": {
-						"0": {
-							"name": "punctuation.definition.string.end.html"
-						}
-					},
-					"patterns": [
-						{
-							"include": "source.js#expression"
-						}
-					]
 				}
 			]
 		}
