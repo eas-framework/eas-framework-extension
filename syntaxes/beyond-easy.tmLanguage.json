@@ -532,25 +532,32 @@
 	],
 	"repository": {
 		"embedded-beyond-easy": {
-			"match": "(@:?[A-za-z][A-Za-z0-9.]*)((\\()(.*)(\\)))?(;?)",
+			"name": "embedded.control.beyond-easy",
+			"match": "(@:?[A-za-z_])(([_A-Za-z0-9.]|\\?\\.)*((\\()(.*?)(\\)))?)(;?)",
 			"captures": {
 				"1": {
+					"name": "keyword.control.beyond-easy"
+				},
+				"2": {
 					"name": "keyword.control.beyond-easy"
 				},
 				"3": {
 					"name": "keyword.control.beyond-easy"
 				},
-				"4": {
+				"5": {
+					"name": "keyword.control.beyond-easy"
+				},
+				"6": {
 					"patterns": [
 						{
 							"include": "source.js"
 						}
 					]
 				},
-				"5": {
+				"7": {
 					"name": "keyword.control.beyond-easy"
 				},
-				"6": {
+				"8": {
 					"name": "keyword.control.beyond-easy"
 				}
 			}
