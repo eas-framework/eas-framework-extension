@@ -27,6 +27,9 @@
 			"include": "#embedded-beyond-easy"
 		},
 		{
+			"include": "#continue-embedded"
+		},
+		{
 			"begin": "(<)[?]{0,1}([a-z][a-zA-Z0-9:-]*)(?=[^>]*/>)",
 			"beginCaptures": {
 				"1": {
@@ -552,6 +555,27 @@
 				}
 			}
 		},
+		"continue-embedded": {
+			"match": "}[ ]*(else|else if|do)[ ]*((\\()(.*)(\\)))?",
+			"captures": {
+				"1": {
+					"name": "keyword.control.beyond-easy"
+				},
+				"3": {
+					"name": "keyword.control.beyond-easy"
+				},
+				"4": {
+					"patterns": [
+						{
+							"include": "source.js"
+						}
+					]
+				},
+				"5": {
+					"name": "keyword.control.beyond-easy"
+				}
+			}
+		},
 		"escape-symbol": {
 			"name": "string.regexp",
 			"match": "@@"
@@ -727,6 +751,9 @@
 				},
 				{
 					"include": "#embedded-beyond-easy"
+				},
+				{
+					"include": "#continue-embedded"
 				}
 			]
 		},
@@ -759,6 +786,9 @@
 				},
 				{
 					"include": "#embedded-beyond-easy"
+				},
+				{
+					"include": "#continue-embedded"
 				}
 			]
 		},
@@ -836,6 +866,21 @@
 				},
 				{
 					"include": "#string-single-quoted"
+				},
+				{
+					"include": "#escape-symbol"
+				},
+				{
+					"include": "#embedded-javascript-brackets"
+				},
+				{
+					"include": "#embedded-javascript-curly-brackets"
+				},
+				{
+					"include": "#embedded-beyond-easy"
+				},
+				{
+					"include": "#continue-embedded"
 				}
 			]
 		}
