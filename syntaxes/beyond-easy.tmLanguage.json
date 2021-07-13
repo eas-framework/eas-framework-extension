@@ -15,7 +15,10 @@
 			"include": "#embedded-css"
 		},
 		{
-			"include": "#embedded-javascript"
+			"include": "#embedded-javascript-brackets"
+		},
+		{
+			"include": "#embedded-javascript-curly-brackets"
 		},
 		{
 			"include": "#control-statement"
@@ -526,30 +529,28 @@
 	],
 	"repository": {
 		"embedded-beyond-easy": {
-			"begin": "(@)",
-			"beginCaptures": {
+			"match": "(@:?[A-za-z][A-Za-z0-9.]*)((\\()(.*)(\\)))?(;?)",
+			"captures": {
 				"1": {
 					"name": "keyword.control.beyond-easy"
-				}
-			},
-			"patterns": [
-				{
-					"include": "#keyword"
 				},
-				{
-					"include": "#javascript-function"
+				"3": {
+					"name": "keyword.control.beyond-easy"
 				},
-				{
-					"begin": "\\(",
+				"4": {
 					"patterns": [
 						{
 							"include": "source.js"
 						}
-					],
-					"end": "(?=(?:\\)|\\n|function))"
+					]
+				},
+				"5": {
+					"name": "keyword.control.beyond-easy"
+				},
+				"6": {
+					"name": "keyword.control.beyond-easy"
 				}
-			],
-			"end": "(?=(?:<|\\)|(?<!,)\\n))"
+			}
 		},
 		"escape-symbol": {
 			"name": "string.regexp",
@@ -564,22 +565,43 @@
 			"name": "comment.line.beyond-easy",
 			"match": "(//).*$\\n?"
 		},
-		"embedded-javascript": {
-			"begin": "(@)(\\{|\\()",
+		"embedded-javascript-brackets": {
+			"begin": "(@:?\\()",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.control.beyond-easy"
-				},
-				"2": {
-					"name": "source.js.embedded.beyond-easy"
+				}
+			},
+			"end": "(\\))",
+			"endCaptures": {
+				"1": {
+					"name": "keyword.control.beyond-easy"
 				}
 			},
 			"patterns": [
 				{
 					"include": "source.js"
 				}
-			],
-			"end": "(?=(?:\\}|\\)))"
+			]
+		},
+		"embedded-javascript-curly-brackets": {
+			"begin": "(@\\{)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.beyond-easy"
+				}
+			},
+			"end": "(\\})",
+			"endCaptures": {
+				"1": {
+					"name": "keyword.control.beyond-easy"
+				}
+			},
+			"patterns": [
+				{
+					"include": "source.js"
+				}
+			]
 		},
 		"embedded-css": {
 			"begin": "(@style)[ ]*(\\{)",
@@ -600,7 +622,7 @@
 		},
 		"keyword": {
 			"name": "keyword.control.beyond-easy",
-			"match": "(?<=@):?([a-zA-Z0-9]+)(?:\\s?);?",
+			"match": "(?<=@):?([a-zA-Z0-9\\.]+)(?:\\s?);?",
 			"captures": {
 				"4": {
 					"name": "source.js"
@@ -693,6 +715,18 @@
 			"patterns": [
 				{
 					"include": "#entities"
+				},
+				{
+					"include": "#escape-symbol"
+				},
+				{
+					"include": "#embedded-javascript-brackets"
+				},
+				{
+					"include": "#embedded-javascript-curly-brackets"
+				},
+				{
+					"include": "#embedded-beyond-easy"
 				}
 			]
 		},
@@ -713,6 +747,18 @@
 			"patterns": [
 				{
 					"include": "#entities"
+				},
+				{
+					"include": "#escape-symbol"
+				},
+				{
+					"include": "#embedded-javascript-brackets"
+				},
+				{
+					"include": "#embedded-javascript-curly-brackets"
+				},
+				{
+					"include": "#embedded-beyond-easy"
 				}
 			]
 		},
