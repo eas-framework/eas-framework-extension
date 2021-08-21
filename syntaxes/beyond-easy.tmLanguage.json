@@ -573,7 +573,7 @@
 				"6": {
 					"patterns": [
 						{
-							"include": "source.js"
+							"include": "source.ts"
 						}
 					]
 				},
@@ -597,7 +597,7 @@
 				"4": {
 					"patterns": [
 						{
-							"include": "source.js"
+							"include": "source.ts"
 						}
 					]
 				},
@@ -630,7 +630,7 @@
 			},
 			"patterns": [
 				{
-					"include": "source.js"
+					"include": "source.ts"
 				}
 			]
 		},
@@ -649,7 +649,7 @@
 			},
 			"patterns": [
 				{
-					"include": "source.js"
+					"include": "source.ts"
 				}
 			]
 		},
@@ -675,7 +675,7 @@
 			"match": "(?<=@):?([a-zA-Z0-9\\.]+)(?:\\s?);?",
 			"captures": {
 				"4": {
-					"name": "source.js"
+					"name": "source.ts"
 				}
 			}
 		},
