@@ -1,6 +1,7 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "Beyond-easy",
+	"name": "beyond-easy",
+	"scopeName": "text.html.beyond-easy",
+	"injectionSelector": "L:text.html",
 	"patterns": [
 		{
 			"include": "#escape-symbol"
@@ -30,7 +31,29 @@
 			"include": "#continue-embedded"
 		},
 		{
-			"begin": "(<)[?]{0,1}([a-z][a-zA-Z0-9:-]*)(?=[^>]*/>)",
+			"begin": "(<)[:]([a-z][a-zA-Z0-9:-]*)(?=[^>]*/>)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.begin.html"
+				},
+				"2": {
+					"name": "entity.name.function.js"
+				}
+			},
+			"end": "(/>)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.end.html"
+				}
+			},
+			"patterns": [
+				{
+					"include": "#tag-stuff"
+				}
+			]
+		},
+		{
+			"begin": "(<)([a-z][a-zA-Z0-9:-]*)(?=[^>]*/>)",
 			"beginCaptures": {
 				"1": {
 					"name": "punctuation.definition.tag.begin.html"
@@ -592,10 +615,6 @@
 			"begin": "(@\\*)",
 			"end": "(\\*@)"
 		},
-		"comment-line": {
-			"name": "comment.line.beyond-easy",
-			"match": "(//).*$\\n?"
-		},
 		"embedded-javascript-brackets": {
 			"begin": "(@:?\\()",
 			"beginCaptures": {
@@ -891,6 +910,5 @@
 				}
 			]
 		}
-	},
-	"scopeName": "source.beyond-easy"
+	}
 }
