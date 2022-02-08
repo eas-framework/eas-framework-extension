@@ -1,1 +1,1 @@
-Beyond-easy extension, to highlight syntax.
+eas-framework extension, to highlight syntax.

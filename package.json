@@ -1,8 +1,8 @@
 {
-    "name": "beyond-easy-extension",
+    "name": "eas-framework-extension",
     "publisher": "ido-s",
-    "displayName": "Beyond-easy",
-    "description": "Beyond-easy Syntax highlight",
+    "displayName": "Eas-Framework",
+    "description": "Eas-Framework Syntax highlight",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.56.0",
@@ -15,6 +15,12 @@
         "Programming Languages"
     ],
     "contributes": {
+        "languages": [
+            {
+              "id": "eas-framework",
+              "extensions": [".mode", ".inte", ".page"]
+            }
+        ],
         "snippets": [
 			{
 				"language": "html",
@@ -22,24 +28,26 @@
 			}
 		],
         "grammars": [{
-                "scopeName": "text.html.beyond-easy",
-                "path": "./syntaxes/beyond-easy.tmLanguage.json",
+                "scopeName": "text.html.eas-framework",
+                "path": "./syntaxes/eas-framework.tmLanguage.json",
                 "injectTo": [
 					"text.html"
 				],
                 "embeddedLanguages": {
-					"meta.embedded.block.beyond-easy": "beyond-easy",
-					"meta.embedded.block.javascript": "source.js"
+					"meta.embedded.block.eas-framework": "eas-framework",
+					"meta.embedded.block.javascript": "source.js",
+                    "meta.embedded.block.typescript": "source.ts"
+
 				}
             }
         ],
         "configurationDefaults": {
 			"emmet.includeLanguages": {
-				"beyond-easy": "html"
+				"eas-framework": "html"
 			}
 		}
     },
     "repository": {
-        "url": "git@gitlab.com:ido.very.much/beyond-easy-extension.git"
+        "url": "git@gitlab.com:ido.pluto/eas-framework-extension.git"
     }
 }

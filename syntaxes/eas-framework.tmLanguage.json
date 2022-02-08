@@ -1,9 +1,8 @@
 {
-	"name": "beyond-easy",
-	"scopeName": "text.html.beyond-easy",
+	"name": "eas-framework",
+	"scopeName": "text.html.eas-framework",
 	"injectionSelector": "L:text.html",
-	"patterns": [
-		{
+	"patterns": [{
 			"include": "#comment-block"
 		},
 		{
@@ -13,7 +12,13 @@
 			"include": "#comment-line"
 		},
 		{
-			"include": "#embedded-css"
+			"include": "#embedded-page-base"
+		},
+		{
+			"include": "#component-default"
+		},
+		{
+			"include": "#eas-framework-define"
 		},
 		{
 			"include": "#embedded-javascript-brackets"
@@ -25,7 +30,7 @@
 			"include": "#control-statement"
 		},
 		{
-			"include": "#embedded-beyond-easy"
+			"include": "#embedded-eas-framework"
 		},
 		{
 			"include": "#continue-embedded"
@@ -47,11 +52,9 @@
 					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"patterns": [
-				{
-					"include": "#tag-stuff"
-				}
-			]
+			"patterns": [{
+				"include": "#tag-stuff"
+			}]
 		},
 		{
 			"name": "meta.tag.block.any.html",
@@ -62,11 +65,9 @@
 				}
 			},
 			"end": "(})",
-			"patterns": [
-				{
-					"include": "#tag-stuff"
-				}
-			]
+			"patterns": [{
+				"include": "#tag-stuff"
+			}]
 		},
 		{
 			"begin": "(<)[:]([a-z][a-zA-Z0-9:-]*)(?=[^>]*/>)",
@@ -84,11 +85,9 @@
 					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"patterns": [
-				{
-					"include": "#tag-stuff"
-				}
-			]
+			"patterns": [{
+				"include": "#tag-stuff"
+			}]
 		},
 		{
 			"begin": "(<)(@[a-zA-Z0-9:-]*)(?=[^>]*/>)",
@@ -97,7 +96,7 @@
 					"name": "punctuation.definition.tag.begin.html"
 				},
 				"2": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				}
 			},
 			"end": "(/>)",
@@ -106,11 +105,9 @@
 					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"patterns": [
-				{
-					"include": "#tag-stuff"
-				}
-			]
+			"patterns": [{
+				"include": "#tag-stuff"
+			}]
 		},
 		{
 			"name": "meta.tag.block.any.html",
@@ -120,7 +117,7 @@
 					"name": "punctuation.definition.tag.begin.html"
 				},
 				"2": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				}
 			},
 			"end": "(>)",
@@ -129,11 +126,9 @@
 					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"patterns": [
-				{
-					"include": "#tag-stuff"
-				}
-			]
+			"patterns": [{
+				"include": "#tag-stuff"
+			}]
 		},
 		{
 			"include": "text.html.ejs"
@@ -160,8 +155,7 @@
 					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"patterns": [
-				{
+			"patterns": [{
 					"include": "#tag-stuff"
 				},
 				{
@@ -173,11 +167,9 @@
 						}
 					},
 					"end": "(?=</style>)",
-					"patterns": [
-						{
-							"include": "source.sass"
-						}
-					]
+					"patterns": [{
+						"include": "source.sass"
+					}]
 				}
 			]
 		},
@@ -203,8 +195,7 @@
 					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"patterns": [
-				{
+			"patterns": [{
 					"include": "#tag-stuff"
 				},
 				{
@@ -216,11 +207,9 @@
 						}
 					},
 					"end": "(?=</style>)",
-					"patterns": [
-						{
-							"include": "source.css.scss"
-						}
-					]
+					"patterns": [{
+						"include": "source.css.scss"
+					}]
 				}
 			]
 		},
@@ -246,8 +235,7 @@
 					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"patterns": [
-				{
+			"patterns": [{
 					"include": "#tag-stuff"
 				},
 				{
@@ -259,11 +247,9 @@
 						}
 					},
 					"end": "(?=</script>)",
-					"patterns": [
-						{
-							"include": "source.ts"
-						}
-					]
+					"patterns": [{
+						"include": "source.ts"
+					}]
 				}
 			]
 		},
@@ -289,8 +275,7 @@
 					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"patterns": [
-				{
+			"patterns": [{
 					"include": "#tag-stuff"
 				},
 				{
@@ -302,11 +287,9 @@
 						}
 					},
 					"end": "(?=</script>)",
-					"patterns": [
-						{
-							"include": "source.jsx"
-						}
-					]
+					"patterns": [{
+						"include": "source.jsx"
+					}]
 				}
 			]
 		},
@@ -332,8 +315,7 @@
 					"name": "punctuation.definition.tag.end.html"
 				}
 			},
-			"patterns": [
-				{
+			"patterns": [{
 					"include": "#tag-stuff"
 				},
 				{
@@ -345,44 +327,80 @@
 						}
 					},
 					"end": "(?=</script>)",
-					"patterns": [
-						{
-							"include": "source.tsx"
+					"patterns": [{
+						"include": "source.tsx"
+					}]
+				}
+			]
+		},
+		{
+			"begin": "(<)(markdown)\\b(?=[^>]*)(?![^/>]*/>\\s*$)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.begin.html"
+				},
+				"2": {
+					"name": "entity.name.tag.script.html"
+				}
+			},
+			"end": "(</)(markdown)(>)",
+			"endCaptures": {
+				"1": {
+					"name": "punctuation.definition.tag.begin.html"
+				},
+				"2": {
+					"name": "entity.name.tag.script.html"
+				},
+				"3": {
+					"name": "punctuation.definition.tag.end.html"
+				}
+			},
+			"patterns": [{
+					"include": "#tag-stuff"
+				},
+				{
+					"contentName": "text.html",
+					"begin": "(>)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.tag.end.html"
 						}
-					]
+					},
+					"end": "(?=</markdown>)",
+					"patterns": [{
+						"include": "text.html.markdown"
+					}]
 				}
 			]
 		}
 	],
 	"repository": {
-		"embedded-beyond-easy": {
-			"name": "embedded.control.beyond-easy",
+		"embedded-eas-framework": {
+			"name": "embedded.control.eas-framework",
 			"match": "(@:?[A-za-z_])(([_A-Za-z0-9.]|\\?\\.)*((\\()(.*?)(\\)))?)(;?)",
 			"captures": {
 				"1": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				},
 				"2": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				},
 				"3": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				},
 				"5": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				},
 				"6": {
-					"patterns": [
-						{
-							"include": "source.ts"
-						}
-					]
+					"patterns": [{
+						"include": "source.ts"
+					}]
 				},
 				"7": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				},
 				"8": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				}
 			}
 		},
@@ -390,20 +408,18 @@
 			"match": "}[ ]*(else|else if|do)[ ]*((\\()(.*)(\\)))?",
 			"captures": {
 				"1": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				},
 				"3": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				},
 				"4": {
-					"patterns": [
-						{
-							"include": "source.ts"
-						}
-					]
+					"patterns": [{
+						"include": "source.ts"
+					}]
 				},
 				"5": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				}
 			}
 		},
@@ -412,7 +428,7 @@
 			"match": "@@"
 		},
 		"comment-block": {
-			"name": "comment.block.beyond-easy",
+			"name": "comment.block.eas-framework",
 			"begin": "(@\\*)",
 			"end": "(\\*@)"
 		},
@@ -420,32 +436,30 @@
 			"begin": "(@:?\\()",
 			"beginCaptures": {
 				"1": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				}
 			},
 			"end": "(\\))",
 			"endCaptures": {
 				"1": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				}
 			},
-			"patterns": [
-				{
-					"include": "source.ts"
-				}
-			]
+			"patterns": [{
+				"include": "source.ts"
+			}]
 		},
 		"embedded-javascript-curly-brackets": {
 			"begin": "(@\\{)",
 			"beginCaptures": {
 				"1": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				}
 			},
 			"end": "(\\})",
 			"endCaptures": {
 				"1": {
-					"name": "keyword.control.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				}
 			},
 			"patterns": [
@@ -455,25 +469,54 @@
 				}
 			]
 		},
-		"embedded-css": {
-			"begin": "(@style)[ ]*(\\{)",
+		"embedded-page-base": {
+			"begin": "(@\\[)",
 			"beginCaptures": {
 				"1": {
-					"name": "entity.name.tag.style.html"
-				},
-				"2": {
-					"name": "source.css.embedded.beyond-easy"
+					"name": "keyword.control.eas-framework"
 				}
 			},
-			"patterns": [
-				{
-					"include": "source.css"
+			"end": "(\\])",
+			"endCaptures": {
+				"1": {
+					"name": "keyword.control.eas-framework"
 				}
-			],
-			"end": "(?=(?:\\}))"
+			},
+			"patterns": [{
+				"include": "#tag-stuff"
+			}]
+		},
+		"component-default": {
+			"begin": "(@default\\()(.*)(\\)\\[)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.eas-framework"
+				},
+				"2": {
+					"patterns": [{
+						"include": "#tag-stuff"
+					}]
+				},
+				"3": {
+					"name": "keyword.control.eas-framework"
+				}
+			},
+			"end": "(\\])",
+			"endCaptures": {
+				"1": {
+					"name": "keyword.control.eas-framework"
+				}
+			},
+			"patterns": [{
+				"include": "#tag-stuff"
+			}]
+		},
+		"eas-framework-define": {
+			"name": "keyword.operator.arithmetic.js",
+			"match": ":([a-zA-Z0-9\\.]+):"
 		},
 		"keyword": {
-			"name": "keyword.control.beyond-easy",
+			"name": "keyword.control.eas-framework",
 			"match": "(?<=@):?([a-zA-Z0-9\\.]+)(?:\\s?);?",
 			"captures": {
 				"4": {
@@ -482,7 +525,7 @@
 			}
 		},
 		"control-statement": {
-			"name": "keyword.control.beyond-easy",
+			"name": "keyword.control.eas-framework",
 			"match": "(?<!\\.)\\b(break|catch|do|else|finally|if|continue|case|default)\\b"
 		},
 		"javascript-function": {
@@ -502,17 +545,13 @@
 					"name": "entity.name.function.js"
 				}
 			},
-			"patterns": [
-				{
-					"begin": "\\(",
-					"patterns": [
-						{
-							"include": "#javascript-parameter-name"
-						}
-					],
-					"end": "\\)"
-				}
-			],
+			"patterns": [{
+				"begin": "\\(",
+				"patterns": [{
+					"include": "#javascript-parameter-name"
+				}],
+				"end": "\\)"
+			}],
 			"end": "(\\s|\\{|\\n)"
 		},
 		"javascript-parameter-name": {
@@ -531,8 +570,7 @@
 			}
 		},
 		"entities": {
-			"patterns": [
-				{
+			"patterns": [{
 					"name": "constant.character.entity.html",
 					"match": "(&)([a-zA-Z0-9]+|#[0-9]+|#x[0-9a-fA-F]+)(;)",
 					"captures": {
@@ -564,8 +602,7 @@
 					"name": "punctuation.definition.string.end.html"
 				}
 			},
-			"patterns": [
-				{
+			"patterns": [{
 					"include": "#entities"
 				},
 				{
@@ -578,7 +615,7 @@
 					"include": "#embedded-javascript-curly-brackets"
 				},
 				{
-					"include": "#embedded-beyond-easy"
+					"include": "#embedded-eas-framework"
 				},
 				{
 					"include": "#continue-embedded"
@@ -599,8 +636,7 @@
 					"name": "punctuation.definition.string.end.html"
 				}
 			},
-			"patterns": [
-				{
+			"patterns": [{
 					"include": "#entities"
 				},
 				{
@@ -613,7 +649,7 @@
 					"include": "#embedded-javascript-curly-brackets"
 				},
 				{
-					"include": "#embedded-beyond-easy"
+					"include": "#embedded-eas-framework"
 				},
 				{
 					"include": "#continue-embedded"
@@ -636,8 +672,7 @@
 					"name": "punctuation.separator.key-value.html"
 				}
 			},
-			"patterns": [
-				{
+			"patterns": [{
 					"name": "string.quoted.double.html",
 					"contentName": "meta.toc-list.id.html",
 					"begin": "\"",
@@ -652,11 +687,9 @@
 							"name": "punctuation.definition.string.end.html"
 						}
 					},
-					"patterns": [
-						{
-							"include": "#entities"
-						}
-					]
+					"patterns": [{
+						"include": "#entities"
+					}]
 				},
 				{
 					"name": "string.quoted.single.html",
@@ -673,17 +706,14 @@
 							"name": "punctuation.definition.string.end.html"
 						}
 					},
-					"patterns": [
-						{
-							"include": "#entities"
-						}
-					]
+					"patterns": [{
+						"include": "#entities"
+					}]
 				}
 			]
 		},
 		"tag-stuff": {
-			"patterns": [
-				{
+			"patterns": [{
 					"include": "#tag-id-attribute"
 				},
 				{
@@ -705,7 +735,7 @@
 					"include": "#embedded-javascript-curly-brackets"
 				},
 				{
-					"include": "#embedded-beyond-easy"
+					"include": "#embedded-eas-framework"
 				},
 				{
 					"include": "#continue-embedded"

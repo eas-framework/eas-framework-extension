@@ -1,7 +1,107 @@
 {
-    "Razor Script": {
+    "Script": {
         "prefix": "@",
-        "body": ["@{\n$1\n} \n $2"],
+        "body": "@{\n\t$1\n} \n $2",
         "description": "Razor no output"
+    },
+    "Write": {
+        "prefix": "write",
+        "body": "@$1",
+        "description": "Write HTML"
+    },
+    "Write Safe": {
+        "prefix": "safe",
+        "body": "@:$1",
+        "description": "Write Escaped HTML"
+    },
+    "Page Base": {
+        "prefix": "@[",
+        "body": "@[model='$1' codeFile='inherit'",
+        "description": "Page small placeholders"
+    },
+    "Placeholder": {
+        "prefix": ":",
+        "body": "<:$1/>",
+        "description": "Model Placeholder"
+    },
+    "Reader": {
+        "prefix": "reader",
+        "body": "<:reader/>",
+        "description": "Reader Placeholder"
+    },
+    "For of": {
+        "prefix": "@of",
+        "body": "@for(const i of $1){\n\t$2\n}",
+        "description": "Reader Placeholder"
+    },
+    "For in": {
+        "prefix": "@in",
+        "body": "@for(const i in $1){\n\t$2\n}",
+        "description": "Reader Placeholder"
+    },
+    "Include": {
+        "prefix": "@include",
+        "body": "@include('$1')",
+        "description": "Include Component / Page in **Runtime**"
+    },
+    "Page": {
+        "prefix": "page",
+        "body": "<Page from=\"./$1.page\"/>",
+        "description": "Include Page on build"
+    },
+    "Small Component": {
+        "prefix": "inte",
+        "body": "<$1 folder=\"./\"/>",
+        "description": "Add Small Component"
+    },
+    "Component": {
+        "prefix": "binte",
+        "body": "<$1 folder=\"./\"></$1>",
+        "description": "Add Component"
+    },
+    "Placeholder value big": {
+        "prefix": "<@",
+        "body": "<@$1 />",
+        "description": "Placeholder value - bit tag"
+    },
+    "Placeholder value small": {
+        "prefix": "<@s",
+        "body": "<@$1>$2</@$1>",
+        "description": "Placeholder value - bit tag"
+    },
+    "If": {
+        "prefix": "@if",
+        "body": "@if($1){\n\t$2\n}",
+        "description": "If Statement"
+    },
+    "Else": {
+        "prefix": "@else",
+        "body": "else ($1){\n\t$2\n}",
+        "description": "Else Statement"
+    },
+    "Comment": {
+        "prefix": "@*",
+        "body": "@*$1*@",
+        "description": "EAS Comment"
+    },
+    "Default": {
+        "prefix": "@default",
+        "body": "@default($1)[$2]",
+        "description": "Component default value"
+    },
+    "Define": {
+        "prefix": "@define",
+        "body": "@define('$1', '$2')",
+        "description": "Define custom value"
+    },
+    "Connect": {
+        "prefix": "connect",
+        "body": "<connect name=\"$1\" sendTo=\"$2\" validate=\"$3\"/>",
+        "description": "Connect server function to client js"
+    },
+    "Markdown": {
+        "prefix": "markdown",
+        "body": "<markdown>\n$1\n</markdown>",
+        "description": "Easy markdown"
     }
 }
