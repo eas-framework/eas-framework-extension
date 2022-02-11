@@ -15,7 +15,7 @@
         "description": "Write Escaped HTML"
     },
     "Page Base": {
-        "prefix": "@[",
+        "prefix": "@base",
         "body": "@[model='$1' codeFile='inherit'",
         "description": "Page small placeholders"
     },
