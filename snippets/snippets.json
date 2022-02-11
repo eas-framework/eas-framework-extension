@@ -16,7 +16,7 @@
     },
     "Page Base": {
         "prefix": "@base",
-        "body": "@[model='$1' codeFile='inherit'",
+        "body": "@[model='$1' codeFile='inherit']",
         "description": "Page small placeholders"
     },
     "Placeholder": {
