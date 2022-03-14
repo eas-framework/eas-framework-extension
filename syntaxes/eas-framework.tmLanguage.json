@@ -24,6 +24,9 @@
 			"include": "#embedded-javascript-brackets"
 		},
 		{
+			"include": "#embedded-javascript-compile"
+		},
+		{
 			"include": "#embedded-javascript-curly-brackets"
 		},
 		{
@@ -451,6 +454,26 @@
 		},
 		"embedded-javascript-curly-brackets": {
 			"begin": "(@\\{)",
+			"beginCaptures": {
+				"1": {
+					"name": "keyword.control.eas-framework"
+				}
+			},
+			"end": "(\\})",
+			"endCaptures": {
+				"1": {
+					"name": "keyword.control.eas-framework"
+				}
+			},
+			"patterns": [
+
+				{
+					"include": "source.ts"
+				}
+			]
+		},
+		"embedded-javascript-compile": {
+			"begin": "(@compile[ ]*\\{)",
 			"beginCaptures": {
 				"1": {
 					"name": "keyword.control.eas-framework"

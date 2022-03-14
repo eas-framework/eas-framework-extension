@@ -94,6 +94,11 @@
         "body": "@define('$1', '$2')",
         "description": "Define custom value"
     },
+    "Compile": {
+        "prefix": "@compile",
+        "body": "@compile {\n\t$1\n}",
+        "description": "Define custom value"
+    },
     "Connect": {
         "prefix": "connect",
         "body": "<connect name=\"$1\" sendTo=\"$2\" validate=\"$3\"/>",
