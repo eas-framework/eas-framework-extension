@@ -1,7 +1,7 @@
 # Syntax highlight for EAS Framework
 The official syntax highlighting for EAS Framework
 
-![Screenshots](https://gitlab.com/eas-framework/eas-framework-extension/-/raw/images/screenshot.png)
+![Screenshots](https://gitlab.com/eas-framework/eas-framework-extension/-/raw/master/images/screenshot.png)
 
 # Snippets
 
