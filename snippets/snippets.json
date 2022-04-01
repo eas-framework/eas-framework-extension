@@ -1,6 +1,6 @@
 {
     "Script": {
-        "prefix": "@",
+        "prefix": "@{",
         "body": "@{\n\t$1\n} \n $2",
         "description": "Razor no output"
     },
@@ -75,7 +75,7 @@
         "description": "If Statement"
     },
     "Else": {
-        "prefix": "@else",
+        "prefix": "else",
         "body": "else ($1){\n\t$2\n}",
         "description": "Else Statement"
     },

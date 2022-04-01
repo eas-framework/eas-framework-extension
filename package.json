@@ -1,9 +1,12 @@
 {
     "name": "eas-framework-extension",
-    "publisher": "ido-s",
-    "displayName": "Eas-Framework",
-    "description": "Eas-Framework Syntax highlight",
+    "description": "EAS-Framework Syntax highlight",
+    "author": "Ido Pluto",
+    "displayName": "EAS-Framework",
     "version": "0.0.1",
+    "preview": true,
+    "license": "MIT",
+    "type": "module",
     "engines": {
         "vscode": "^1.56.0",
         "node": "14"
@@ -12,42 +15,59 @@
         "build": "vsce package"
     },
     "categories": [
-        "Programming Languages"
+        "Programming Languages",
+        "Snippets"
     ],
+    "keywords": ["eas-framework", "ssr", "aspx", "ejs", "razor", "nodejs", "framework"],
+    "icon": "https://eas-framework.ml/favicon.png",
     "contributes": {
-        "languages": [
-            {
-              "id": "eas-framework",
-              "extensions": [".mode", ".inte", ".page"]
-            }
-        ],
-        "snippets": [
-			{
-				"language": "html",
-				"path": "./snippets/snippets.json"
-			}
-		],
+        "languages": [{
+            "id": "html",
+            "extensions": [".mode", ".inte", ".page"]
+        }],
+        "snippets": [{
+            "language": "eas-framework",
+            "path": "./snippets/snippets.json"
+        }],
         "grammars": [{
-                "scopeName": "text.html.eas-framework",
-                "path": "./syntaxes/eas-framework.tmLanguage.json",
-                "injectTo": [
-					"text.html"
-				],
-                "embeddedLanguages": {
-					"meta.embedded.block.eas-framework": "eas-framework",
-					"meta.embedded.block.javascript": "source.js",
-                    "meta.embedded.block.typescript": "source.ts"
+            "scopeName": "text.html.eas-framework",
+            "path": "./syntaxes/eas-framework.tmLanguage.json"
+        }],
+        "debuggers": [{
+            "type": "eas-framework",
+            "label": "EAS-Framework Debug",
 
-				}
+            "program": "${workspaceFolder}/index.js",
+            "args": ["allowSourceDebug", "rebuild"],
+
+            "runtime": "node",
+
+            "languages": ["javascript", "typescript", "eas-framework", "javascriptreact", "typescriptreact"],
+
+            "initialConfigurations": [{
+                "type": "pwa-node",
+                "request": "launch",
+                "name": "Launch EAS Framework Server",
+                "program": "${workspaceFolder}/index.js",
+                "args": ["allowSourceDebug", "rebuild"],
+                "pauseForSourceMap": true,
+                "skipFiles": [
+                    "<node_internals>/**"
+                ],
+                "outFiles": [
+                    "${workspaceFolder}/node_modules/eas-framework/dist/SystemData/*",
+                    "${workspaceFolder}/**/*.js"
+                ]
+            }],
+
+            "variables": {
+                "PickProcess": "extension.node-debug.pickNodeProcess"
             }
-        ],
-        "configurationDefaults": {
-			"emmet.includeLanguages": {
-				"eas-framework": "html"
-			}
-		}
+        }]
     },
     "repository": {
-        "url": "git@gitlab.com:ido.pluto/eas-framework-extension.git"
-    }
+        "type": "git",
+        "url": "git@gitlab.com:eas-framework/eas-framework-extension"
+    },
+    "homepage": "https://eas-framework.ml/"
 }
