@@ -2,6 +2,7 @@
     "name": "eas-framework-extension",
     "description": "EAS-Framework Syntax highlight",
     "author": "ido-pluto",
+    "publisher": "ido-pluto",
     "displayName": "EAS-Framework",
     "version": "0.0.1",
     "preview": true,
