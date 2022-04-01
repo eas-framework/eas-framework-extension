@@ -8,19 +8,19 @@ The official syntax highlighting for EAS Framework
 | Name                    | Snippet  |
 |-------------------------|----------|
 | Script                  | @{       |
-| Page Base               | @base    |
+| Page Base               | @‎base    |
 | Placeholder             | :        |
-| For of                  | @of      |
-| For in                  | @in      |
-| Include                 | @include |
+| For of                  | @‎of      |
+| For in                  | @‎in      |
+| Include                 | @‎include |
 | Small Component         | inte     |
 | Component               | binte    |
 | placeholder Value       | <@       |
-| placeholder Value Small | <@s      |
-| If                      | @if      |
+| placeholder Value Small | <@‎s      |
+| If                      | @‎if      |
 | Comment                 | @*       |
-| Default                 | @default |
-| Define                  | @define  |
-| Compile                 | @compile |
+| Default                 | @‎default |
+| Define                  | @‎define  |
+| Compile                 | @‎compile |
 | Connect                 | connect  |
 | Markdown                | markdown |
