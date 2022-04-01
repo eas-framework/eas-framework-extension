@@ -1,8 +1,10 @@
 .vscode/**
 .vscode-test/**
 .gitignore
-images/**
+images/screenshot.png
 
 # mac files
 .DS_Store
 **/.DS_Store
+
+CHANGELOG.md

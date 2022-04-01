@@ -19,7 +19,7 @@
         "Snippets"
     ],
     "keywords": ["eas-framework", "ssr", "aspx", "ejs", "razor", "nodejs", "framework"],
-    "icon": "https://eas-framework.ml/favicon.png",
+    "icon": "images/favicon.png",
     "contributes": {
         "languages": [{
             "id": "html",
