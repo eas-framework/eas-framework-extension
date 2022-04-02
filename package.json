@@ -4,7 +4,7 @@
     "author": "ido-pluto",
     "publisher": "ido-pluto",
     "displayName": "EAS-Framework",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "preview": true,
     "license": "MIT",
     "type": "module",
@@ -27,12 +27,15 @@
             "extensions": [".mode", ".inte", ".page"]
         }],
         "snippets": [{
-            "language": "eas-framework",
+            "language": "html",
             "path": "./snippets/snippets.json"
         }],
         "grammars": [{
             "scopeName": "text.html.eas-framework",
-            "path": "./syntaxes/eas-framework.tmLanguage.json"
+            "path": "./syntaxes/eas-framework.tmLanguage.json",
+            "injectTo": [
+                "text.html"
+            ]
         }],
         "debuggers": [{
             "type": "eas-framework",
